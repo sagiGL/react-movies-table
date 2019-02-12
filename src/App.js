@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Grid from './Grid';
 
 const Trailer = ({ data }) => (
-  <a href={ data.url }
+  <a href={ data.Trailer.url }
      target="_blank"
      rel="noopener noreferrer">
     trailer...
