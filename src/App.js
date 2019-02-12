@@ -13,19 +13,18 @@ const Trailer = ({ data }) => (
 const config = [
   {
     title: 'id',
-    field: 'imdbID'
+    fieldName: 'imdbID'
   },
   {
     title: 'title',
-    field: 'Title'
+    fieldName: 'Title'
   },
   {
     title: 'rating',
-    field: 'imdbRating',
+    fieldName: 'imdbRating',
   },
 //  {
 //    title: 'trailer',
-//    field: 'Trailer',
 //    component: Trailer
 //  }
 ];
