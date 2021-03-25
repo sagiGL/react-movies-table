@@ -23,10 +23,10 @@ const config = [
     title: 'rating',
     fieldName: 'imdbRating',
   },
-//  {
-//    title: 'trailer',
-//    component: Trailer
-//  }
+ {
+   title: 'trailer',
+   component: Trailer
+ }
 ];
 
 const App = ({ data }) => (

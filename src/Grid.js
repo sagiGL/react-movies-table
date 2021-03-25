@@ -1,24 +1,44 @@
 import React from 'react';
 
-const Grid = ({ config, data }) => (
-  <table>
-    <thead>
-    <tr>
-      <th>Col 1</th>
-      <th>Col 2</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Data 1</td>
-      <td>Data 2</td>
-    </tr>
-    <tr>
-      <td>Data 1</td>
-      <td>Data 2</td>
-    </tr>
-    </tbody>
-  </table>
-);
+const Grid = ({ config, data }) => {
+  return (
+    <table>
+      <thead>
+      <tr>
+        {
+          config.map( c => (
+            <th  key={ c.title }>{c.title}</th>
+            )
+          )
+        }
+      </tr>
+      </thead>
+      <tbody>
+        {
+          data.map( movie  => (
+            <tr key={ movie.id }>
+              {
+                config.map( c => 
+                  {
+                    if (c.title === "trailer") {
+                      let Trailer = c.component;
+                      return (
+                         <td key={ c.title }>
+                           <Trailer data={movie}/>
+                         </td>
+                         )
+                    } else {
+                      return ( <td key={ c.title }>{movie[c.fieldName]}</td>)
+                    }
+                  }
+                ) 
+              }
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  )
+};
 
 export default Grid;
